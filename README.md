@@ -1,4 +1,5 @@
-#M.A.M.I.E : ![Build](https://github.com/Palo-IT/mamie/workflows/Build/badge.svg?branch=master)
+![Build](https://github.com/Palo-IT/mamie/workflows/Build/badge.svg?branch=master)
+#M.A.M.I.E : 
 
 MA Mesure de l'Impact Energetique -> My Mesure of Energectic Impact
 

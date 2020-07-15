@@ -1,10 +1,11 @@
 package org.paloit.mamie.portal.model;
 
+import com.sun.istack.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -17,8 +18,41 @@ public class Organisation {
     @Type(type = "uuid-char")
     private UUID id;
 
+    @NotNull
     private String organisationName;
 
     @OneToMany
-    private List<Project> projects;
+    private Set<Project> projects;
+
+    public Organisation() {
+    }
+
+    public Organisation(String organisationName, Set<Project> projects) {
+        this.organisationName = organisationName;
+        this.projects = projects;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getOrganisationName() {
+        return organisationName;
+    }
+
+    public void setOrganisationName(String organisationName) {
+        this.organisationName = organisationName;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
 }

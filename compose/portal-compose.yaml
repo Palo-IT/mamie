@@ -14,6 +14,8 @@ services:
     build:
       context: ../portal/persistence
       dockerfile: mongo.DockerFile
+    ports:
+      - "27017:27017"
 
   sql:
     build:

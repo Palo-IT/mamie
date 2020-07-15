@@ -11,15 +11,25 @@ import java.util.Collections;
 @SpringBootTest
 class OrganisationRepositoryTest {
 
+    public static final String ORGANISATION_NAME = "PaloIT";
     @Autowired
     private IOrganisationRepository organisationRepository;
 
     @Test
     public void testSaveOrganisation() {
-        final Organisation organisation = new Organisation("PaloIT", Collections.emptySet());
+        final Organisation organisation = new Organisation(ORGANISATION_NAME, Collections.emptySet());
         organisationRepository.save(organisation);
 
         final Iterable<Organisation> organisationRepositoryAll = organisationRepository.findAll();
-        Assertions.assertThat(organisationRepositoryAll.iterator().hasNext());
+        Assertions.assertThat(organisationRepositoryAll.iterator().hasNext()).isTrue();
+        final Organisation savedOrganisation = organisationRepositoryAll.iterator().next();
+
+        Assertions.assertThat(savedOrganisation)
+                .extracting(Organisation::getId)
+                .isNotNull();
+        Assertions.assertThat(savedOrganisation)
+                .extracting(Organisation::getOrganisationName)
+                .isEqualTo(ORGANISATION_NAME);
+        
     }
 }

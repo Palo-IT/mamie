@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   portal:
-    build: ../portal
+    build: ../portal/api
     ports:
       - "9090:9090"
     depends_on:
@@ -12,12 +12,12 @@ services:
 
   mongo:
     build:
-      context: ../portal/persistence
+      context: ../portal/api/persistence
       dockerfile: mongo.DockerFile
     ports:
       - "27017:27017"
 
   sql:
     build:
-      context: ../portal/persistence
+      context: ../portal/api/persistence
       dockerfile: sql.DockerFile

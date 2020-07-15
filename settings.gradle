@@ -13,5 +13,7 @@ pluginManagement {
 }
 rootProject.name = 'mamie'
 include 'portal',
+        'portal:api',
+        'portal:client',
         'agents',
         'agents:tests:back-java-spring'

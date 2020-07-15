@@ -21,7 +21,7 @@ public class Project {
     @NotNull
     private String projectName;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<MonitoredApplication> monitoredApplicationSet;
 
     public Project() {

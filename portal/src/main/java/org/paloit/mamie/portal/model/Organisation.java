@@ -21,7 +21,7 @@ public class Organisation {
     @NotNull
     private String organisationName;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Project> projects;
 
     public Organisation() {

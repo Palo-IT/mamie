@@ -21,14 +21,13 @@ public class MonitoredApplication {
     @NotNull
     private String applicationName;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<ApplicationComponent> applicationComponent;
 
     public MonitoredApplication() {
     }
 
-    public MonitoredApplication(UUID id, String applicationName, Set<ApplicationComponent> applicationComponent) {
-        this.id = id;
+    public MonitoredApplication(String applicationName, Set<ApplicationComponent> applicationComponent) {
         this.applicationName = applicationName;
         this.applicationComponent = applicationComponent;
     }

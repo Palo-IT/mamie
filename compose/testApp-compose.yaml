@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+
+  test-boot:
+    build: ../agents/tests/back-java-spring
+    ports:
+      - "9091:9091"
+
+
+
+
+

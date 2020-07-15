@@ -10,4 +10,5 @@ public interface IOrganisationRepository extends CrudRepository<Organisation, UU
 
     @Override
     List<Organisation> findAll();
+
 }

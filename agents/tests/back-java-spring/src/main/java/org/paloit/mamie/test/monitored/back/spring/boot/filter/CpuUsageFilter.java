@@ -21,6 +21,7 @@ public class CpuUsageFilter extends GenericFilterBean {
     private final ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
 
     //http://tutorials.jenkov.com/java-performance/jmh.html
+    //https://docs.oracle.com/en/java/javase/11/management/using-platform-mbean-server-and-platform-mxbeans.html#GUID-E954720D-0C11-491C-8784-4364738DDEE3
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest) {

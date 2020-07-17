@@ -31,9 +31,8 @@ public class CpuUsageFilter extends GenericFilterBean {
 
             chain.doFilter(request, response);
 
-            final long threadUserTime = threadMXBean.getCurrentThreadUserTime();
             final long currentThreadCpuTime = threadMXBean.getCurrentThreadCpuTime();
-            logger.info("End of request : " + currentThreadCpuTime + ":" + threadUserTime);
+            logger.info("End of request : " + currentThreadCpuTime);
         } else {
             logger.warn("Unable to profile request, Not an HttpServletRequest : " + request.getClass().getName());
             doFilter(request, response, chain);

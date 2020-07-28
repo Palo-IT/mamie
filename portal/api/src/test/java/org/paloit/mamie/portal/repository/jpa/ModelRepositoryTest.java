@@ -1,12 +1,14 @@
-package org.paloit.mamie.portal.repository;
+package org.paloit.mamie.portal.repository.jpa;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.paloit.mamie.portal.model.ApplicationComponent;
-import org.paloit.mamie.portal.model.MonitoredApplication;
-import org.paloit.mamie.portal.model.Organisation;
-import org.paloit.mamie.portal.model.Project;
+import org.paloit.mamie.portal.entities.jpa.ApplicationComponent;
+import org.paloit.mamie.portal.entities.jpa.MonitoredApplication;
+import org.paloit.mamie.portal.entities.jpa.Organisation;
+import org.paloit.mamie.portal.entities.jpa.Project;
+import org.paloit.mamie.portal.repository.jpa.IOrganisationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.Collections;

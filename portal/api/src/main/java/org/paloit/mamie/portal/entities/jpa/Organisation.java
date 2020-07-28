@@ -1,4 +1,4 @@
-package org.paloit.mamie.portal.model;
+package org.paloit.mamie.portal.entities.jpa;
 
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.GenericGenerator;

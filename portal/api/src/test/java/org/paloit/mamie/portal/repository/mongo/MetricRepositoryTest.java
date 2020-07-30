@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.paloit.mamie.portal.entities.mongo.Metric;
-import org.paloit.mamie.portal.repository.mongo.IMetricRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 
@@ -40,9 +39,9 @@ class MetricRepositoryTest {
     @Test
     void findAllByComponentUUID() {
         final List<Metric> allByComponentUUID = metricsRepository.findAllByComponentUUID(app1UUID);
-        Assertions.assertEquals(6,allByComponentUUID.size());
+        Assertions.assertEquals(6, allByComponentUUID.size());
         final List<Metric> allByComponentUUID2 = metricsRepository.findAllByComponentUUID(app2UUID);
-        Assertions.assertEquals(3,allByComponentUUID2.size());
+        Assertions.assertEquals(3, allByComponentUUID2.size());
     }
 
     @Test
